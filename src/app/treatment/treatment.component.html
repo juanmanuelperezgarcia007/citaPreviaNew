@@ -1,0 +1,49 @@
+<div class="container">
+
+  <div class="listTreatment text-center row">
+    <div *ngFor="let treatment of treatments" class="card col-4" id={{treatment.id}}>
+      <div class="card-body">
+        <img class="close" src="../../assets/icons/highlight_off-24px.svg" alt="Cerrar"
+          (click)=deleteTreatment($event.target.parentNode.parentNode.id)>
+        <h5 class="card-title">{{treatment.tittle}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Duracion: {{treatment.duration.minutes}}</h6>
+        <p class="card-text">{{treatment.descripcion}}
+        </p>
+
+      </div>
+    </div>
+    <div class="col-4">
+      <img class="add" src="../../assets/icons/add_circle_outline-24px.svg" alt="msg.add" (click)=addTreatment()>
+      <p>{{msg.add}}</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="m-auto col-6">
+  <form>
+    <div class="form-group">
+      <label for="newtreatment">{{msg.treatment}}</label>
+      <input type="text" class="form-control" id="newtreatment" [placeholder]=msg.introduceAtreatment>
+    </div>
+
+    <div class="form-group">
+      <label for="newDescription">{{msg.description}}</label>
+      <input type="textArea" class="form-control" id="newDescription" [placeholder]=msg.introduceDescription>
+    </div>
+
+    <div class="form-group">
+      <label for="newDuration">Horas</label>
+      <select name="newDuration" id="newDuration">
+        <option *ngFor="let hour of hours" value="hour">{{hour}}</option>
+      </select>
+
+      <label for="newDuration">{{msg.hours}}</label>
+      <select name="newDuration" id="newDuration">
+        <option *ngFor="let minute of minutes" value="hour">{{minute}}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+</div>

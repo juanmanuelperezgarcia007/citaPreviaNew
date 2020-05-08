@@ -1,0 +1,25 @@
+.listTreatment {
+  margin-top: 13%;
+}
+
+.card {
+  width: 18rem;
+  border: 18px solid white;
+}
+
+.card-body {
+  border: 1px solid black;
+}
+
+.close {
+  position: absolute;
+  top: 2px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.add {
+  width: 20%;
+  margin: 23px;
+  cursor: pointer;
+}
