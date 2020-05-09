@@ -15,10 +15,13 @@ export class TreatmentComponent implements OnInit {
     introduceAtreatment: AppConst.INTRODUCETREATMENT,
     description: AppConst.DESCRIPTION,
     introduceDescription: AppConst.INTRODUCEDESCRIPTION,
-    hours: AppConst.HOURS
+    hours: AppConst.HOURS,
+    minutes: AppConst.MINUTES,
+    cancel: AppConst.CANCEL,
+    createtreatment: AppConst.CREATETREATMENT,
+    duration: AppConst.DURATION
   };
-  hours: number[] = [1, 2, 3, 4];
-  minutes: number[] = [0, 15, 30, 45];
+
   treatments: TreatmentModel[] = new Array();
 
 

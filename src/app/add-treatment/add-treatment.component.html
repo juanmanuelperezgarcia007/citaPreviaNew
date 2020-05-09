@@ -1,0 +1,33 @@
+<form>
+  <div class="form-group">
+    <label for="newtreatment">{{msg.treatment}}</label>
+    <input type="text" class="form-control" id="newtreatment" [placeholder]=msg.introduceAtreatment>
+  </div>
+
+  <div class="form-group">
+    <label for="newDescription">{{msg.description}}</label>
+    <input type="textArea" class="form-control" id="newDescription" [placeholder]=msg.introduceDescription>
+  </div>
+
+  <div class="form-group">
+
+    <label>{{msg.duration}}:</label>
+    <div>
+      <select class="custom-select col-4" name="newDuration" id="newDuration">
+        <option *ngFor="let hour of select.hours" value="hour">{{hour}}</option>
+      </select>
+      <label for="newDuration">{{msg.hours}}</label>
+    </div>
+
+    <div>
+      <select class="custom-select col-4" name="newDuration" id="newDuration">
+        <option *ngFor="let minute of select.minutes" value="hour">{{minute}}</option>
+      </select>
+      <label for="newDuration">{{msg.minutes}}</label>
+    </div>
+
+
+  </div>
+
+
+</form>

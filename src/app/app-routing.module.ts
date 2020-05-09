@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'treatment', component: TreatmentComponent }
+  { path: 'listTreatment', component: TreatmentComponent }
 ];
 
 @NgModule({

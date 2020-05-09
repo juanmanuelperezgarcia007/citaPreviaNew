@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TreatmentComponent } from './treatment/treatment.component';
 import { HomeComponent } from './home/home.component';
+import { AddTreatmentComponent } from './add-treatment/add-treatment.component';
+
 
 @NgModule({
   declarations: [
@@ -14,6 +16,7 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     TreatmentComponent,
     HomeComponent,
+    AddTreatmentComponent,
 
   ],
   imports: [
@@ -23,10 +26,7 @@ import { HomeComponent } from './home/home.component';
   ],
   providers: [],
   bootstrap: [
-    AppComponent,
-    NavbarComponent,
-    TreatmentComponent,
-    HomeComponent,
+    AppComponent
   ]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 export class AppConst {
+
   static APPOINTMENT = 'Gestion de Citas';
   static TITLE = 'Cita Previa';
   static TREATMENTS = 'Tratamientos';
@@ -8,5 +9,9 @@ export class AppConst {
   static DESCRIPTION = 'Descripción';
   static INTRODUCEDESCRIPTION = 'Introduce tu nuevo descripción';
   static HOURS = 'Horas';
+  static MINUTES = 'Minutos';
+  static DURATION = 'Duración';
+  static CANCEL = 'Cancelar';
+  static CREATETREATMENT = 'Crear tratamiento';
 
 }
