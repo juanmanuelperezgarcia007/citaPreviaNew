@@ -49,6 +49,7 @@ export class AddTreatmentComponent implements OnInit {
   onSubmit() {
     console.log(this.addForm.value);
     this.addTreatment(this.addForm.value);
+
   }
 
   addTreatment(treatmentForm) {

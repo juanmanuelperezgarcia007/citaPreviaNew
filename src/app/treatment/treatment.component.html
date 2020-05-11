@@ -3,19 +3,21 @@
   <div class="listTreatment text-center row">
 
     <!-- TRATAMIENTOS -->
-    <div *ngFor="let treatment of treatments" class="card col-4" id={{treatment.id}}>
-      <div class="card-body">
+    <div *ngFor="let treatment of treatments" class="col-4" id={{treatment.id}}>
+      <div class="card">
+        <div class="card-body">
+
+          <h5 class="card-title">{{treatment.tittle}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{msg.duration}}:
+            <span *ngIf="treatment.duration.hours !== 0">{{treatment.duration.hours}} {{msg.hours}}</span>
+            {{treatment.duration.minutes}} {{msg.minutes}} </h6>
+          <p class="card-text">{{treatment.descripcion}}</p>
+
+        </div>
         <img class="close" src="../../assets/icons/highlight_off-24px.svg" alt="Cerrar"
           (click)=deleteAndGetTreatment($event.target.parentNode.parentNode.id)>
         <img class="edit" src="../../assets/icons/create-24px.svg" alt="Editar" data-toggle="modal"
           data-target="#exampleModal-edit">
-        <h5 class="card-title">{{treatment.tittle}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{msg.duration}}:
-          <span *ngIf="treatment.duration.hours !== 0">{{treatment.duration.hours}} {{msg.hours}}</span>
-          {{treatment.duration.minutes}} {{msg.minutes}} </h6>
-        <p class="card-text">{{treatment.descripcion}}
-        </p>
-
       </div>
     </div>
 
