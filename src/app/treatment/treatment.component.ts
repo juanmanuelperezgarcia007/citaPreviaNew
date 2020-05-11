@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TreatmentModel } from '../modelos/treatmentModel';
 import { AppConst } from '../constantes/appConst';
+import { TreatmentService } from '../treatment.service';
 
 @Component({
   selector: 'app-treatment',
@@ -21,28 +22,33 @@ export class TreatmentComponent implements OnInit {
     createtreatment: AppConst.CREATETREATMENT,
     duration: AppConst.DURATION
   };
+  showClose = false;
+  treatments: TreatmentModel[] = [];
 
-  treatments: TreatmentModel[] = new Array();
-
-
-  constructor() {
-
-    this.treatments = [
-      { tittle: 'Corte de pelo infantil', descripcion: 'Corte de pelo para niños menores de 12 años', duration: { hours: 0, minutes: 45 }, id: 0 },
-      { tittle: 'Corte de pelo adulto', descripcion: 'Corte de pelo para niños mayores de 12 años', duration: { hours: 0, minutes: 90 }, id: 1 },
-      { tittle: 'Corte de pelo adulto', descripcion: 'Corte de pelo para niños mayores de 12 años', duration: { hours: 0, minutes: 66 }, id: 2 },
-      { tittle: 'Corte de pelo adulto', descripcion: 'Corte de pelo para niños mayores de 12 años', duration: { hours: 0, minutes: 89 }, id: 3 },
-
-    ];
+  constructor(private treatmentService: TreatmentService) {
+    this.getTreatment();
   }
 
   ngOnInit() {
+
   }
+  deleteAndGetTreatment(id) {
+    this.deleteTreatment(id);
+    this.getTreatment();
+  }
+
   deleteTreatment(id) {
-    this.treatments.splice(id, 1);
+    this.treatmentService.deleteTreatment(id);
   }
 
-  addTreatment() {
-
+  getTreatment() {
+    this.treatments = this.treatmentService.getTreatment();
   }
+
+  modifyTreatment(id, tittle, description, duration) {
+    this.treatmentService.modifyTreatment(id, tittle, description, duration);
+  }
+
+
+
 }

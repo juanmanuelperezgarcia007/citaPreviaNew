@@ -8,6 +8,7 @@ export class AppConst {
   static INTRODUCETREATMENT = 'Introduce tu nuevo tratamiento';
   static DESCRIPTION = 'Descripción';
   static INTRODUCEDESCRIPTION = 'Introduce tu nuevo descripción';
+  static EDITTREATMENT = 'Edita tu tratamiento';
   static HOURS = 'Horas';
   static MINUTES = 'Minutos';
   static DURATION = 'Duración';

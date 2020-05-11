@@ -1,46 +1,44 @@
 <div class="container">
 
   <div class="listTreatment text-center row">
+
+    <!-- TRATAMIENTOS -->
     <div *ngFor="let treatment of treatments" class="card col-4" id={{treatment.id}}>
       <div class="card-body">
         <img class="close" src="../../assets/icons/highlight_off-24px.svg" alt="Cerrar"
-          (click)=deleteTreatment($event.target.parentNode.parentNode.id)>
+          (click)=deleteAndGetTreatment($event.target.parentNode.parentNode.id)>
+        <img class="edit" src="../../assets/icons/create-24px.svg" alt="Editar" data-toggle="modal"
+          data-target="#exampleModal-edit">
         <h5 class="card-title">{{treatment.tittle}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{msg.duration}}: {{treatment.duration.minutes}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{msg.duration}}:
+          <span *ngIf="treatment.duration.hours !== 0">{{treatment.duration.hours}} {{msg.hours}}</span>
+          {{treatment.duration.minutes}} {{msg.minutes}} </h6>
         <p class="card-text">{{treatment.descripcion}}
         </p>
 
       </div>
     </div>
-    <div class="col-4">
 
+    <!-- BOTON MODAL -->
+    <div class="col-4">
       <div type="button" data-toggle="modal" data-target="#exampleModal">
         <img class="add" src="../../assets/icons/add_circle_outline-24px.svg" alt="msg.add">
       </div>
       <p>{{msg.add}}</p>
     </div>
+
   </div>
 
 </div>
 
-
+<!-- MODAL CREATE TREATMENT -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{msg.add}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-add-treatment></app-add-treatment>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{msg.cancel}}</button>
-        <button type="submit" class="btn btn-primary">{{msg.createtreatment}}</button>
-      </div>
-    </div>
-  </div>
+  <app-add-treatment></app-add-treatment>
+</div>
+
+<!-- MODAL EDIT TREATMENT -->
+<div class="modal fade" id="exampleModal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <app-edit-treatment></app-edit-treatment>
 </div>

@@ -18,8 +18,19 @@
   cursor: pointer;
 }
 
+.edit {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  cursor: pointer;
+}
+
 .add {
   width: 20%;
   margin: 23px;
   cursor: pointer;
+}
+
+.modal {
+  margin-top: 170px;
 }
