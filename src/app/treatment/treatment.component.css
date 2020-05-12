@@ -11,18 +11,41 @@
   border: 1px solid black;
 }
 
-.close {
-  position: absolute;
-  top: 2px;
-  right: 15px;
+.botones {
+  padding: 0 2rem;
+}
+
+.boton-close {
+  background-color: brown;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
   cursor: pointer;
 }
 
-.edit {
-  position: absolute;
-  top: 25px;
-  right: 15px;
+.boton-edit {
+  background-color: yellow;
+  padding: 10px;
+  border-bottom-right-radius: 10px;
   cursor: pointer;
+}
+
+.closed {
+  display: block;
+  width: 25px;
+  height: auto;
+  margin: 0 auto;
+  cursor: pointer;
+
+
+}
+
+.edit {
+  display: block;
+  width: 25px;
+  height: auto;
+  margin: 0 auto;
+  cursor: pointer;
+
 }
 
 .add {

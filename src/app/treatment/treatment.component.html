@@ -14,11 +14,17 @@
           <p class="card-text">{{treatment.descripcion}}</p>
 
         </div>
-        <img class="close" src="../../assets/icons/highlight_off-24px.svg" alt="Cerrar"
-          (click)=deleteAndGetTreatment($event.target.parentNode.parentNode.id)>
-        <img class="edit" src="../../assets/icons/create-24px.svg" alt="Editar" data-toggle="modal"
-          data-target="#exampleModal-edit">
+        <div class="row botones">
+          <div class="col-6 boton-close" (click)=deleteAndGetTreatment($event.target.parentNode.parentNode.id)>
+            <img class="closed" src="../../assets/icons/highlight_off-24px.svg" alt="Cerrar">
+          </div>
+          <div class="col-6 boton-edit" data-toggle="modal" data-target="#exampleModal-edit">
+            <img class="edit" src="../../assets/icons/create-24px.svg" alt="Editar">
+          </div>
+        </div>
+
       </div>
+
     </div>
 
     <!-- BOTON MODAL -->
