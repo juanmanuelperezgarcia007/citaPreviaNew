@@ -17,13 +17,13 @@
         <img class="close" src="../../assets/icons/highlight_off-24px.svg" alt="Cerrar"
           (click)=deleteAndGetTreatment($event.target.parentNode.parentNode.id)>
         <img class="edit" src="../../assets/icons/create-24px.svg" alt="Editar" data-toggle="modal"
-          data-target="#exampleModal-edit">
+          data-target="#modalForm-edit" (click)=importTreatment(treatment.descripcion,treatment.duration,treatment.id,treatment.tittle)>
       </div>
     </div>
 
     <!-- BOTON MODAL -->
     <div class="col-4">
-      <div type="button" data-toggle="modal" data-target="#exampleModal">
+      <div type="button" data-toggle="modal" data-target="#modalForm">
         <img class="add" src="../../assets/icons/add_circle_outline-24px.svg" alt="msg.add">
       </div>
       <p>{{msg.add}}</p>
@@ -34,13 +34,13 @@
 </div>
 
 <!-- MODAL CREATE TREATMENT -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <app-add-treatment></app-add-treatment>
 </div>
 
 <!-- MODAL EDIT TREATMENT -->
-<div class="modal fade" id="exampleModal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="modalForm-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <app-edit-treatment></app-edit-treatment>
 </div>

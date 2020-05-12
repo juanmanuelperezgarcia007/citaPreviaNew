@@ -22,10 +22,13 @@ export class TreatmentComponent implements OnInit {
     createtreatment: AppConst.CREATETREATMENT,
     duration: AppConst.DURATION
   };
-  showClose = false;
+
+  treatment: TreatmentModel;
   treatments: TreatmentModel[] = [];
 
-  constructor(private treatmentService: TreatmentService) {
+  constructor(
+    private treatmentService: TreatmentService
+    ) {
     this.getTreatment();
   }
 
@@ -45,10 +48,14 @@ export class TreatmentComponent implements OnInit {
     this.treatments = this.treatmentService.getTreatment();
   }
 
-  modifyTreatment(id, tittle, description, duration) {
-    this.treatmentService.modifyTreatment(id, tittle, description, duration);
+
+  importTreatment(description, duration, id, tittle) {
+    this.treatment = {
+      descripcion: description,
+      duration,
+      id,
+      tittle
+    };
   }
-
-
 
 }

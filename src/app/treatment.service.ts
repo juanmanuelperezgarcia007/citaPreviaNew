@@ -26,8 +26,8 @@ export class TreatmentService {
     this.treatments.splice(id, 1);
   }
 
-  modifyTreatment(id, tittle, description, duration) {
-    console.log(id, tittle, description, duration);
+  modifyTreatment(treatment) {
+    console.log(treatment);
   }
 
   addTreatment(treatment) {

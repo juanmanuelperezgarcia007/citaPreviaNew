@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppConst } from '../constantes/appConst';
+import { TreatmentService } from '../treatment.service';
 
 @Component({
   selector: 'app-edit-treatment',
@@ -27,9 +28,12 @@ export class EditTreatmentComponent implements OnInit {
     minutes: [0, 15, 30, 45]
   };
 
-  constructor() { }
+  constructor(private treatmentService: TreatmentService) { }
 
   ngOnInit() {
+  }
+  modifyTreatment(treatment) {
+    this.treatmentService.modifyTreatment(treatment);
   }
 
 }
